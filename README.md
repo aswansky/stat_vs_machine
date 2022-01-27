@@ -1,1 +1,1 @@
-# stat_vs_machine
+# statistical and data analyssis techinques comparisons
