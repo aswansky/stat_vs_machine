@@ -70,15 +70,3 @@ for bar in resultsplot.patches:
     text_x = bar.get_x() + bar.get_width() / 2
     text_y = bar.get_y() + value
     resultsplot.text(text_x, text_y, text, ha='center',color='r',size=12)
-
-###decision tree using cart 
-mod3 = DecisionTreeClassifier(criterion = "gini", max_leaf_nodes=10).fit(datax,datay)
-data['predicted3']=mod3.fit(datax,datay).predict(datax)
-data.query("death==1 and predicted3==0")
-data.query("death==0 and predicted3==1")
-###decision tree using entropy 
-mod4 = DecisionTreeClassifier(criterion = "entropy").fit(datax,datay)
-data['predicted4']=mod4.fit(datax,datay).predict(datax)
-data.query("death==1 and predicted4==0")
-data.query("death==0 and predicted4==1")
-data.to_csv('file_name.csv')
